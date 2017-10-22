@@ -52,8 +52,8 @@
             this.tbTitle = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.tbOrigin = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericMaxGrab)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -286,6 +286,13 @@
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
+            // tbOrigin
+            // 
+            this.tbOrigin.Location = new System.Drawing.Point(72, 75);
+            this.tbOrigin.Name = "tbOrigin";
+            this.tbOrigin.Size = new System.Drawing.Size(304, 20);
+            this.tbOrigin.TabIndex = 19;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -294,13 +301,6 @@
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 18;
             this.label7.Text = "Origin : ";
-            // 
-            // tbOrigin
-            // 
-            this.tbOrigin.Location = new System.Drawing.Point(72, 75);
-            this.tbOrigin.Name = "tbOrigin";
-            this.tbOrigin.Size = new System.Drawing.Size(304, 20);
-            this.tbOrigin.TabIndex = 19;
             // 
             // FormDistanceMatrixOne
             // 
@@ -311,7 +311,9 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "FormDistanceMatrixOne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Distance Matrix - One";

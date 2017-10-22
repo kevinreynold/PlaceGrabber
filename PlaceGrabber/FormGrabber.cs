@@ -34,6 +34,7 @@ namespace PlaceGrabber
         String city, country;
         String latitude, longitude;
         String types;
+        String radius;
 
         public int offset;
         public int limit;
@@ -71,6 +72,7 @@ namespace PlaceGrabber
                     latitude = cbCity.SelectedValue.ToString().Split(';')[0];
                     longitude = cbCity.SelectedValue.ToString().Split(';')[1];
                     types = getAllTypes();
+                    radius = ((int)numericUpDownRadius.Value).ToString();
 
                     offset = (int)numericUpDownOffset.Value;
                     limit = (int)numericUpDownLimit.Value;
@@ -79,10 +81,10 @@ namespace PlaceGrabber
                         groupBox1.Enabled = false;
                         //radarsearch               
                         //lookingForConnectionAsync();
-                        String radarsearchResult = await doTaskAsync(RadarSearch.getRadarSearchQuery(apiKey, latitude, longitude, types));
+                        String radarsearchResult = await doTaskAsync(RadarSearch.getRadarSearchQuery(apiKey, latitude, longitude, types, radius));
 
-                        String dir_log = getDateTimeDirectory(); 
-                        String dir = dir_log + "_" + city + "_" + types;
+                        String dir_log = getDateTimeDirectory();
+                        String dir = dir_log + "_" + city + "_" + types + "_" + radius;
                         Directory.CreateDirectory("Images/" + dir);
 
                         JObject radarsearchJSON = JObject.Parse(radarsearchResult);
@@ -176,6 +178,7 @@ namespace PlaceGrabber
                                         try
                                         {
                                             photoreference = (String)placedetailsJSON["result"]["photos"][0]["photo_reference"];
+                                            //Console.WriteLine(photoreference);
                                             //Console.WriteLine(PlacePhoto.getPlacePhotoQuery(apiKey, photoreference));
                                             photo = new PlacePhoto(placeid, dir);
                                             String save_directory = "Images/" + dir + "/" + placeid + ".jpg";
@@ -221,7 +224,7 @@ namespace PlaceGrabber
                         //}
 
                         exportCSV("Result/" + dir + ".csv", arrData);
-                        savetoLog(dir_log, city, country, arrRadarSearch.Count.ToString(), offset, limit, types);
+                        savetoLog(dir_log, city, country, arrRadarSearch.Count.ToString(), offset, limit, types, radius);
 
                         progressBar1.Value = progressBar1.Maximum;
                         richTextBox1.AppendText("Done...\n");
@@ -295,10 +298,10 @@ namespace PlaceGrabber
             return false;
         }
 
-        private void savetoLog(String time, String city, String country, String fetch, int offset, int limit, String types)
+        private void savetoLog(String time, String city, String country, String fetch, int offset, int limit, String types, String radius)
         {
             StreamWriter writer = new StreamWriter("log.txt", true);
-            writer.WriteLine(time + ";" + city + ";" + country + ";" + fetch + "(" + offset.ToString() + "-" + (offset + limit).ToString() + ");" + types);
+            writer.WriteLine(time + ";" + city + ";" + country + ";" + fetch + "(" + offset.ToString() + "-" + (offset + limit).ToString() + ");" + types + ";" + radius);
             writer.Close();
         }
 

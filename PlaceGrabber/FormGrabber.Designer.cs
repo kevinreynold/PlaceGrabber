@@ -37,6 +37,9 @@
             this.numericUpDownLimit = new System.Windows.Forms.NumericUpDown();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDownRadius = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.lbType = new System.Windows.Forms.ListBox();
             this.btnType = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,13 +63,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOffset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLimit)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRadius)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(181, 104);
+            this.button1.Location = new System.Drawing.Point(182, 134);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(296, 51);
             this.button1.TabIndex = 0;
@@ -76,7 +80,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 473);
+            this.progressBar1.Location = new System.Drawing.Point(12, 508);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(484, 23);
             this.progressBar1.TabIndex = 2;
@@ -84,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(186, 80);
+            this.label1.Location = new System.Drawing.Point(186, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 3;
@@ -93,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(305, 81);
+            this.label2.Location = new System.Drawing.Point(305, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 4;
@@ -101,7 +105,7 @@
             // 
             // numericUpDownOffset
             // 
-            this.numericUpDownOffset.Location = new System.Drawing.Point(236, 78);
+            this.numericUpDownOffset.Location = new System.Drawing.Point(236, 104);
             this.numericUpDownOffset.Maximum = new decimal(new int[] {
             200,
             0,
@@ -114,7 +118,7 @@
             // numericUpDownLimit
             // 
             this.numericUpDownLimit.Enabled = false;
-            this.numericUpDownLimit.Location = new System.Drawing.Point(339, 78);
+            this.numericUpDownLimit.Location = new System.Drawing.Point(339, 104);
             this.numericUpDownLimit.Maximum = new decimal(new int[] {
             200,
             0,
@@ -134,7 +138,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(410, 81);
+            this.checkBox1.Location = new System.Drawing.Point(410, 107);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(67, 17);
             this.checkBox1.TabIndex = 7;
@@ -144,6 +148,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.numericUpDownRadius);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.lbType);
             this.groupBox1.Controls.Add(this.btnType);
             this.groupBox1.Controls.Add(this.button1);
@@ -160,15 +167,50 @@
             this.groupBox1.Controls.Add(this.numericUpDownOffset);
             this.groupBox1.Location = new System.Drawing.Point(12, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(484, 163);
+            this.groupBox1.Size = new System.Drawing.Size(484, 193);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(462, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "m";
+            // 
+            // numericUpDownRadius
+            // 
+            this.numericUpDownRadius.Location = new System.Drawing.Point(236, 76);
+            this.numericUpDownRadius.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericUpDownRadius.Name = "numericUpDownRadius";
+            this.numericUpDownRadius.Size = new System.Drawing.Size(220, 20);
+            this.numericUpDownRadius.TabIndex = 17;
+            this.numericUpDownRadius.Value = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(181, 78);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Radius : ";
+            // 
             // lbType
             // 
             this.lbType.FormattingEnabled = true;
-            this.lbType.Location = new System.Drawing.Point(12, 47);
+            this.lbType.Location = new System.Drawing.Point(11, 77);
             this.lbType.Name = "lbType";
             this.lbType.Size = new System.Drawing.Size(162, 108);
             this.lbType.TabIndex = 15;
@@ -237,7 +279,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 198);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 231);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(484, 269);
             this.richTextBox1.TabIndex = 16;
@@ -336,7 +378,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 505);
+            this.ClientSize = new System.Drawing.Size(509, 545);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.progressBar1);
@@ -346,12 +388,13 @@
             this.MaximizeBox = false;
             this.Name = "FormGrabber";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Place Grabber 8.8";
+            this.Text = "Place Grabber 9.0";
             this.Load += new System.EventHandler(this.FormGrabber_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOffset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLimit)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRadius)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -389,5 +432,8 @@
         private System.Windows.Forms.ToolStripMenuItem distanceMatrixToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oneToolStripMenuItem;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDownRadius;
+        private System.Windows.Forms.Label label6;
     }
 }

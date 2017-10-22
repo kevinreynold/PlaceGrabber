@@ -1,0 +1,23 @@
+Taiwan
+Taipei		20500
+Tainan		27000
+Taichung	23000
+Hsinchu		21000
+Kaoshiung	30000
+
+Korea
+Seoul		15250
+Busan		25500
+Gyeongju	36200
+Jinhae		12500
+
+Japan
+Tokyo-LEFT	26200		
+Tokyo-Right	19600	
+Yokohama	19400
+Nagoya		16400
+Kyoto		33750
+Osaka		11500
+
+Hongkong
+Hongkong1	10000
